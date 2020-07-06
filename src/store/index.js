@@ -1,15 +1,20 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
+  state: {},
+  mutations: {},
   actions: {
+    getList(context) {
+      axios.get('/list.json').then(({
+        data
+      }) => {
+        console.log(data)
+      })
+    }
   },
-  modules: {
-  }
+  modules: {}
 })
